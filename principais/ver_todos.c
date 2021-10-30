@@ -10,10 +10,7 @@ void exibir_todos(Evento eventos[], int lastIdx){
 
   for( int idx = 0; idx < lastIdx; idx++){
     exibirEvento(eventos[idx]);
-
-    printf("\n**************\n");
   }
+  
+  printf("\n**************\n");
 }
-
-
-

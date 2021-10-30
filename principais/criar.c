@@ -22,7 +22,7 @@ Evento criarEvento(){
 
   //  Solicita que o usuário entre com os valores referente a data, retorna um timestamp que é armazenado na data do evento
   tm = lerData();
-  e.data = mktime( &tm );
+    e.data = mktime( &tm ); 
 
   return e;
 

@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 int solicitarAcao(){
   int retorno = -1;
 

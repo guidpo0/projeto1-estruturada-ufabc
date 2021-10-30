@@ -5,7 +5,12 @@
 
 int main(void) {
   // Declaração das variaveis do tipo inteiro; quantidadeEventos também representa o index do ultimo evento +1
-  int acao, quantidadeEventos = 0;
+  int quantidadeEventos = 0;
+
+  // Declara a variavel "acao" do tipo enum de ações 
+  enum acoes acao;
+
+  // Declaração da lista de eventos
   Evento eventos[50];
 
   printf("*** Agenda PE 2021.3 ***\n");
@@ -17,10 +22,10 @@ int main(void) {
 
     // Executa a lógica referente a ação escolhida
     switch(acao){
-      case 0:
+      case Sair:
         printf("*** Programa Encerrado ***");
         return 0;
-      case 1:
+      case Adicionar:
         // Cria um evento e armazena na ultima posição desocupada no array de eventos;
         eventos[quantidadeEventos] = criarEvento();
         
@@ -32,14 +37,17 @@ int main(void) {
         // exibir a última posição desocupada
         quantidadeEventos++;
     
-      case 2:
+        break;
+      case Editar:
         editarEvento(eventos, quantidadeEventos);
         break;
-      case 3:
+
+      case Remover:
         removerEvento(eventos, quantidadeEventos);
         quantidadeEventos--;
         break;
-      case 4:
+        
+      case VerTodos:
         exibir_todos(eventos, quantidadeEventos);
         break;
     }

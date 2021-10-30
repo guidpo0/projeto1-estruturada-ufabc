@@ -6,7 +6,7 @@
 #include "index.h"
 
 // Imprime o menu de ação
-void exibirMenu () {
+void exibirMenu() {
 
   printf("Menu:\n");
   printf("1-Adicionar\n");

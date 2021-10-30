@@ -1,3 +1,4 @@
+// https://www.tutorialspoint.com/c_standard_library/time_h.htm
 #include <time.h>
 #include <stdio.h>
 #include <string.h>
@@ -12,12 +13,10 @@ int lerCategoria (){
   exibirCategorias();
   scanf("%d", &categoria);
 
-  while(categoria < 1 || categoria > 7){
-
+  if(categoria < 1 || categoria >= 8){
     printf("*** Entrada inválida ***\n");
-    exibirCategorias();
     
-    scanf("%d", &categoria);
+    return lerCategoria();
   }
 
   // Retorna um inteiro que representa uma categoria
@@ -30,7 +29,6 @@ struct tm lerData(){
   struct tm tm;
 
   printf("Entre apenas com a hora do evento:\n");
-  printf("Exemplo: 15\n");
   scanf("%d", &hora);
   printf("Entre com o dia do evento:\n");
   scanf("%d", &dia);
@@ -46,6 +44,5 @@ struct tm lerData(){
   tm.tm_min = 0;
   tm.tm_sec = 0;
 
-  // Retorna um timestamp
   return tm;
 }
